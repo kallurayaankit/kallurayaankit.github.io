@@ -1,14 +1,21 @@
-/* ------------------------------------------------------------------------- */
-/* 1. Remove the stray ">_" pseudo‑element from skill titles                  */
-/* ------------------------------------------------------------------------- */
-.section-title::after,
-.section-title::before {
-    content: none !important;
+/* ==========================================================
+   1.  REMOVE THE STRAY ">_" PSEUDO‑ELEMENT
+       (appears inside .section-title after the text)
+   ========================================================== */
+.section-title::after {
+    content: "" !important;   /* override the default content ">_" */
+    display: none !important; /* don't render it at all */
 }
 
-/* ------------------------------------------------------------------------- */
-/* 2. Base Styles                                                             */
-/* ------------------------------------------------------------------------- */
+/* Also target .bg-green .section .section-title for specificity */
+.bg-green .section .section-title::after {
+    content: "" !important;
+    display: none !important;
+}
+
+/* ==========================================================
+   2.  BASE STYLES
+   ========================================================== */
 body {
     background-color: #ECEBEB;
     text-align: justify;
@@ -57,9 +64,10 @@ footer {
     font-family: "Times New Roman";
 }
 
-/* ------------------------------------------------------------------------- */
-/* 3. Profile Links (GitHub / LinkedIn) – Plain text buttons                 */
-/* ------------------------------------------------------------------------- */
+/* ==========================================================
+   3.  PROFILE LINKS (GitHub / LinkedIn)
+       Simple, visible text links.
+   ========================================================== */
 #links {
     margin-top: 8px;
 }
