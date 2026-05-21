@@ -1,3 +1,17 @@
+/* Ensure no pseudo-element adds stray text */
+.section-title::before,
+.section-title::after,
+.section-title i::before,
+.section-title i::after,
+.fa::before,
+.fa::after,
+.fab::before,
+.fab::after,
+.fas::before,
+.fas::after {
+    content: none !important;
+}
+
 body {
     background-color: #ECEBEB;
     text-align: justify;
