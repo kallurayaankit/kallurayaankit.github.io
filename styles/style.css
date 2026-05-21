@@ -1,25 +1,14 @@
-/* Kill ALL pseudo-element text across the page */
-*, *::before, *::after {
+/* ------------------------------------------------------------------------- */
+/* 1. Kill ONLY the stray ">_" pseudo‑element                                     */
+/* ------------------------------------------------------------------------- */
+.section-title::after,
+.section-title::before {
     content: none !important;
-}
-/* Restore Font Awesome icons only */
-.fa::before, .fas::before, .far::before, .fab::before,
-.fa::after, .fas::after, .far::after, .fab::after {
-    content: "" !important;
-    font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900;
 }
 
-body {
-    background-color: #ECEBEB;
-    ...
-}
-/* rest of your existing CSS */
-/* Remove stray pseudo-element text in skills titles */
-.section-title::before,
-.section-title::after {
-    content: none !important;
-}
+/* ------------------------------------------------------------------------- */
+/* 2. Normal styling (same as your original, without any global content reset)  */
+/* ------------------------------------------------------------------------- */
 body {
     background-color: #ECEBEB;
     text-align: justify;
