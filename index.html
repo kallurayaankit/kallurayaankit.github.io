@@ -57,6 +57,7 @@
                             <li>Locust</li>
                             <li>Selenium WebDriver</li>
                             <li>Java</li>
+                            <li>pandas</li>
                         </ul>
                         <p class="section-title">📋 Testing & Quality</p>
                         <ul class="tab">
@@ -68,6 +69,7 @@
                             <li>Contract Testing (Pact)</li>
                             <li>Mobile Testing</li>
                             <li>Security Testing (OWASP ZAP)</li>
+                            <li>Data Quality</li>
                         </ul>
                         <p class="section-title">🛠 Tools & CI/CD</p>
                         <ul class="tab">
@@ -245,7 +247,7 @@
                             <li>Pure Python, no native dependencies – works anywhere</li>
                         </ul>
 
-                        <!-- ✅ Project 9 – Security Test Automation with OWASP ZAP -->
+                        <!-- Project 9 – Security Test Automation with OWASP ZAP -->
                         <p>
                             <b>Security Test Automation with OWASP ZAP</b> | OWASP ZAP, Python, Pytest, Docker, GitHub Actions<br>
                             <i>Security Testing</i>
@@ -257,6 +259,21 @@
                             <li>Fails the build if high‑ or medium‑risk alerts are found</li>
                             <li>Runs in CI using the official ZAP Docker container</li>
                             <li>Currently scans a safe target to keep the badge green, switch to a vulnerable site to demonstrate the gate</li>
+                        </ul>
+
+                        <!-- ✅ Project 10 – Data Quality Validation -->
+                        <p>
+                            <b>Data Quality Validation</b> | Python, pandas, pytest, GitHub Actions<br>
+                            <i>Data Quality</i>
+                            <a href="https://github.com/kallurayaankit/data-quality-validation" class="btn btn-info btn-sm" role="button">Github Link</a>
+                        </p>
+                        <ul>
+                            <li>Lightweight data quality test suite using pandas and pytest</li>
+                            <li>Validates CSV data for missing values, duplicate IDs, and out‑of‑range values</li>
+                            <li>Checks for nulls in critical columns and enforces unique IDs</li>
+                            <li>Validates numeric value ranges and writes a validation error report on failure</li>
+                            <li>Fails on broken data — proving any dataset can be tested like code</li>
+                            <li>CI/CD with GitHub Actions and a green badge</li>
                         </ul>
 
                     </div>
@@ -293,6 +310,10 @@
                                 <tr>
                                     <td>Security Testing (OWASP ZAP)</td>
                                     <td>Docker</td>
+                                </tr>
+                                <tr>
+                                    <td>Data Quality (pandas)</td>
+                                    <td>pytest</td>
                                 </tr>
                             </tbody>
                         </table>
