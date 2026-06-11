@@ -1,132 +1,299 @@
 /* ==========================================================
-   KILL ALL PSEUDO-ELEMENTS (removes >_ permanently)
+   2026 MODERN PORTFOLIO — Glassmorphism + Bento Grid
+   No icon fonts, no JS, pure CSS magic.
    ========================================================== */
+
+/* ---------- RESET & BASE ---------- */
 *, *::before, *::after {
-    content: none !important;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* ==========================================================
-   BASE STYLES
-   ========================================================== */
 body {
-    background-color: #ECEBEB;
-    text-align: justify;
-    text-justify: inter-word;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
+    color: #1a1a1a;
+    line-height: 1.6;
+    min-height: 100vh;
 }
 
-p {
-    margin: 5px;
+/* Dark mode automatic */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        color: #e0e0e0;
+    }
 }
 
-footer {
-    color: white;
-    height: 24px;
-    width: 100%;
-    text-align: center;
+/* ---------- GLASS EFFECT ---------- */
+.glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
 }
 
-.tab {
-    padding-left: 2em;
+@media (prefers-color-scheme: dark) {
+    .glass {
+        background: rgba(20, 20, 40, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
 }
 
-.section {
-    padding: 1em;
+/* ---------- LAYOUT ---------- */
+.layout {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
-.section-header {
-    font-size: 30px;
-}
-
-.section-title {
-    font-size: 20px;
-    margin-bottom: 0;
-}
-
-#profile {
-    max-width: 60%;
-    max-height: 60%;
-    display: block;
-    margin: auto;
-    margin-bottom: 10px;
-    border-radius: 50%;
-}
-
-#name {
-    font-family: "Times New Roman";
-}
-
-/* ==========================================================
-   PROFILE LINKS (GitHub / LinkedIn)
-   ========================================================== */
-#links {
-    margin-top: 8px;
-}
-
-#links a {
-    display: inline-block;
-    background-color: #007bff;
-    color: white !important;
-    padding: 6px 12px;
-    margin: 4px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: normal;
-}
-
-#links a:hover {
-    background-color: #0056b3;
-}
-
-/* Header Text */
-.page-header {
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    font-family: "Brush Script MT", cursive;
-    font-size: 50px;
-}
-
-/****************************/
-.bg-green {
-    background-color: #20B2AA;
-    color: white;
-}
-
-.bg-light-white {
-    background-color: #FFFFFD;
-}
-
-.btn-sm {
-    padding: 0px;
-}
-
-.container {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.shadow {
-    box-shadow: 5px 5px 15px grey;
-}
-
-/* Hyper link formatting */
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-a:hover {
-    color: inherit;
-    text-decoration: none;
-}
-
-.nav a {
-    color: inherit;
-}
-.sticky-sidebar {
+.sidebar {
+    width: 320px;
+    flex-shrink: 0;
     position: sticky;
-    top: 20px;
+    top: 2rem;
     align-self: flex-start;
 }
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        position: static;
+    }
+}
+
+/* ---------- PROFILE CARD ---------- */
+.profile-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255,255,255,0.6);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.tagline {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.contact-links {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: 1px solid rgba(0,0,0,0.2);
+    background: transparent;
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.btn-outline:hover {
+    background: rgba(0,0,0,0.05);
+    border-color: #20B2AA;
+}
+
+@media (prefers-color-scheme: dark) {
+    .btn-outline {
+        border-color: rgba(255,255,255,0.3);
+    }
+    .btn-outline:hover {
+        background: rgba(255,255,255,0.1);
+        border-color: #20B2AA;
+    }
+}
+
+.btn-resume {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background: #20B2AA;
+    color: white !important;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-resume:hover {
+    background: #1a8e87;
+}
+
+.info-details {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+/* ---------- SECTION CARDS ---------- */
+.section-card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+/* ---------- SKILLS GRID ---------- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-group h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.skill-group ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.skill-group li {
+    background: rgba(32, 178, 170, 0.1);
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+/* ---------- BENTO GRID (Projects) ---------- */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.bento-item {
+    background: rgba(255,255,255,0.2);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bento-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.bento-item summary {
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bento-item summary span {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    white-space: nowrap;
+}
+
+.bento-item p {
+    padding: 0 1rem 1rem 1rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.bento-item a {
+    color: #20B2AA;
+    text-decoration: underline;
+}
+
+/* Remove default marker */
+.bento-item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* ---------- COURSEWORK ---------- */
+.coursework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.5rem;
+}
+
+.coursework-grid span {
+    background: rgba(0,0,0,0.05);
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    text-align: center;
+    opacity: 0.6;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-card {
+    animation: fadeSlideIn 0.6s ease both;
+}
+.section-card:nth-child(1) { animation-delay: 0.1s; }
+.section-card:nth-child(2) { animation-delay: 0.2s; }
+.section-card:nth-child(3) { animation-delay: 0.3s; }
+.section-card:nth-child(4) { animation-delay: 0.4s; }
+.section-card:nth-child(5) { animation-delay: 0.5s; }
