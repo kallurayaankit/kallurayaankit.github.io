@@ -1,367 +1,176 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-dark">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Ankit Kalluraya - ePortfolio">
+    <meta name="description" content="Ankit Kalluraya - Software QA Engineer">
     <meta name="author" content="Ankit Kalluraya">
     <title>Ankit Kalluraya</title>
-
-    <!-- Bootstrap 4 CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Custom CSS -->
-    <link href="styles/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="shortcut icon" href="images/favicon.ico?v=2">
 </head>
 <body>
-    <!-- Header -->
-    <div class="container-fluid bg-dark page-header">
-        Ankit Kalluraya
-    </div>
 
-    <!-- Page Content -->
-    <div class="container">
-        <div class="row">
-            <!-- Left Column -->
-            <div class="col-md-4 sticky-sidebar">
-                <!-- Profile Section -->
-                <div class="bg-light-white shadow p-3 rounded">
-                    <div class="section text-center">
-                        <img id="profile" class="shadow" src="images/your-profile.jpg" alt="Profile Picture">
-                        <h3 id="name">Ankit Kalluraya</h3>
-                        <p>Software QA Engineer | Test Automation Specialist</p>
-                        <a title="Resume" href="https://raw.githubusercontent.com/kallurayaankit/kallurayaankit.github.io/main/resume.pdf" class="btn btn-success btn-sm">Resume</a>
-                        <hr>
-                        <div>
-                            <p>📧 kallurayaankit@gmail.com</p>
-                            <p>📍 Melbourne, VIC, Australia</p>
-                            <!-- Plain text links – always visible -->
-                            <div id="links">
-                                <a href="https://github.com/kallurayaankit" target="_blank" rel="noopener">GitHub Profile</a>
-                                <a href="https://www.linkedin.com/in/ankit-k-61375631/" target="_blank" rel="noopener">LinkedIn Profile</a>
-                            </div>
-                        </div>
-                    </div>
-                </div><br>
+    <div class="layout">
 
-                <!-- Skills Section -->
-                <div class="bg-green shadow p-3 rounded">
-                    <div class="section">
-                        <p class="section-header">⚙ Skills</p>
-                        <hr>
-                        <p class="section-title">💻 Languages</p>
-                        <ul class="tab">
-                            <li>Python</li>
-                            <li>Playwright</li>
-                            <li>Pytest</li>
-                            <li>Locust</li>
-                            <li>Selenium WebDriver</li>
-                            <li>Java</li>
-                            <li>pandas</li>
-                        </ul>
-                        <p class="section-title">📋 Testing & Quality</p>
-                        <ul class="tab">
-                            <li>UI Test Automation</li>
-                            <li>API Testing (CRUD, Schema)</li>
-                            <li>Performance Testing (SLA)</li>
-                            <li>AI Agent Validation (LLM‑as‑Judge)</li>
-                            <li>Data Validation (MongoDB + UI)</li>
-                            <li>Contract Testing (Pact)</li>
-                            <li>Mobile Testing</li>
-                            <li>Security Testing (OWASP ZAP)</li>
-                            <li>Data Quality</li>
-                            <li>Prompt Engineering</li>
-                        </ul>
-                        <p class="section-title">🛠 Tools & CI/CD</p>
-                        <ul class="tab">
-                            <li>GitHub Actions</li>
-                            <li>Docker</li>
-                            <li>Flask</li>
-                            <li>Allure Reports</li>
-                            <li>JSON Schema</li>
-                            <li>OWASP ZAP</li>
+        <!-- ========== STICKY SIDEBAR ========== -->
+        <aside class="sidebar">
+            <div class="profile-card glass">
+                <img src="images/your-profile.jpg" alt="Ankit Kalluraya" class="profile-pic">
+                <h1>Ankit Kalluraya</h1>
+                <p class="tagline">Software QA Engineer<br>Test Automation Specialist</p>
+                <div class="contact-links">
+                    <a href="https://github.com/kallurayaankit" target="_blank" rel="noopener" class="btn-outline">
+                        <!-- GitHub SVG -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/ankit-k-61375631/" target="_blank" rel="noopener" class="btn-outline">
+                        <!-- LinkedIn SVG -->
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                </div>
+                <a href="https://raw.githubusercontent.com/kallurayaankit/kallurayaankit.github.io/main/resume.pdf" class="btn-resume">📄 Resume</a>
+                <div class="info-details">
+                    <span>📧 kallurayaankit@gmail.com</span>
+                    <span>📍 Melbourne, VIC, Australia</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="content">
+
+            <!-- Education -->
+            <section class="section-card glass">
+                <h2>🎓 Education</h2>
+                <p><strong>The University of Melbourne</strong>, Melbourne, Australia<br>Master of Engineering &nbsp;|&nbsp; 2017 – 2021</p>
+            </section>
+
+            <!-- Work Experience -->
+            <section class="section-card glass">
+                <h2>💼 Work Experience</h2>
+                <p><strong>QA Test Analyst / Senior Test Engineer / Project Lead</strong><br>iTech Labs (GLI Subsidiary) &amp; Gaming Labs International, Australia<br><em>Nov 2021 – Aug 2025</em></p>
+                <ul>
+                    <li>Designed/executed 50+ structured system test plans for online gaming/wagering platforms with 100% alignment to global regulations across jurisdictions.</li>
+                    <li>Delivered functional, regression, and compliance testing; improved defect detection by 30%.</li>
+                    <li>Interpreted regulatory frameworks to define test scope, increasing coverage completeness by 25%.</li>
+                    <li>Managed end‑to‑end certification projects across global teams; logged/analysed defects in JIRA.</li>
+                    <li>Produced certification reports for clients/regulators; introduced templates that reduced manual errors.</li>
+                </ul>
+            </section>
+
+            <!-- Skills -->
+            <section class="section-card glass">
+                <h2>⚙️ Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h3>💻 Languages</h3>
+                        <ul>
+                            <li>Python</li><li>Java</li><li>Playwright</li><li>Pytest</li><li>Locust</li><li>Selenium WebDriver</li><li>pandas</li>
                         </ul>
                     </div>
-                </div><br>
-
-                <!-- Interests Section -->
-                <div class="bg-light-white shadow p-3 rounded">
-                    <div class="section">
-                        <p class="section-header">⭐ Interests</p>
-                        <hr>
-                        <div class="badge badge-primary">Test Automation</div>
-                        <div class="badge badge-danger">AI Testing</div>
-                        <div class="badge badge-success">CI/CD Pipelines</div>
+                    <div class="skill-group">
+                        <h3>📋 Testing & Quality</h3>
+                        <ul>
+                            <li>UI Test Automation</li><li>API Testing (CRUD, Schema)</li><li>Performance Testing (SLA)</li><li>AI Agent Validation</li><li>Data Validation (MongoDB)</li><li>Contract Testing (Pact)</li><li>Mobile Testing</li><li>Security Testing (OWASP ZAP)</li><li>Data Quality</li><li>Prompt Engineering</li>
+                        </ul>
                     </div>
-                </div><br>
-
-                <!-- Hobbies Section -->
-                <div class="bg-light-white shadow p-3 rounded">
-                    <div class="section">
-                        <p class="section-header">🏓 Hobbies</p>
-                        <hr>
-                        <div class="badge badge-secondary">Open Source</div>
-                        <div class="badge badge-danger">Tinkering with APIs</div>
-                        <div class="badge badge-dark">Building Test Frameworks</div>
+                    <div class="skill-group">
+                        <h3>🛠 Tools & CI/CD</h3>
+                        <ul>
+                            <li>GitHub Actions</li><li>Docker</li><li>Flask</li><li>Allure Reports</li><li>JSON Schema</li><li>OWASP ZAP</li>
+                        </ul>
                     </div>
                 </div>
-            </div> <!-- End Left Column -->
+            </section>
 
-            <!-- Right Column -->
-            <div class="col-md-8">
-                <!-- Education Section -->
-                <div class="bg-light-white shadow p-3 rounded">
-                    <div class="section">
-                        <p class="section-header">🎓 Education</p>
-                        <hr>
-                        <p><b>The University of Melbourne</b>, Melbourne, Australia</p>
-                        <p>Master of Engineering</p>
-                        <p>2017 - 2021</p>
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                    </div>
-                </div><br>
+            <!-- Projects – Bento Grid -->
+            <section class="section-card glass">
+                <h2>📁 Projects</h2>
+                <div class="bento-grid">
 
-                <!-- Work Experience Section -->
-                <div class="bg-light-white shadow p-3 rounded">
-                    <div class="section">
-                        <p class="section-header">💼 Work Experience</p>
-                        <hr>
-                        <p><b>QA Test Analyst / Senior Test Engineer / Project Lead</b><br>iTech Labs (GLI Subsidiary) & Gaming Labs International, Australia<br>Nov 2021 - Aug 2025</p>
-                        <ul>
-                            <li>Designed/executed 50+ structured system test plans for online gaming/wagering platforms with 100% alignment to global regulations across jurisdictions.</li>
-                            <li>Delivered functional, regression, and compliance testing; improved defect detection by 30%.</li>
-                            <li>Interpreted regulatory frameworks to define test scope, increasing coverage completeness by 25%.</li>
-                            <li>Managed end‑to‑end certification projects across global teams; logged/analysed defects in JIRA.</li>
-                            <li>Produced certification reports for clients/regulators; introduced templates that reduced manual errors.</li>
-                        </ul>
-                    </div>
-                </div><br>
+                    <!-- Project cards using details/summary for accordion effect -->
+                    <details class="bento-item">
+                        <summary>🎭 <strong>Playwright Test Automation Framework</strong> <span>Python, Pytest</span></summary>
+                        <p>Scalable UI test framework with Page Object Model, JSON data-driven tests, parallel execution, and CI/CD. <a href="https://github.com/kallurayaankit/playwright-framework" target="_blank">[repo]</a></p>
+                    </details>
 
-                <!-- Projects Section -->
-                <div class="bg-light-white shadow p-3 rounded">
-                    <div class="section">
-                        <p class="section-header">📁 Projects</p>
-                        <hr>
+                    <details class="bento-item">
+                        <summary>🤖 <strong>AI Agent Validation Framework</strong> <span>Python, LLM‑as‑Judge</span></summary>
+                        <p>Validates AI answers for correctness, sentiment, and hallucinations using a mock MCP client and judge module. <a href="https://github.com/kallurayaankit/ai-agent-validation-framework" target="_blank">[repo]</a></p>
+                    </details>
 
-                        <!-- Project 1 -->
-                        <p>
-                            <b>Playwright Test Automation Framework</b> | Python, Pytest, GitHub Actions<br>
-                            <i>UI Test Automation</i>
-                            <a href="https://github.com/kallurayaankit/playwright-framework" class="btn btn-info btn-sm" role="button">Github Link</a>
-                        </p>
-                        <ul>
-                            <li>Built a scalable test automation framework using Playwright (Python) with Page Object Model</li>
-                            <li>Parameterized tests with JSON data, automatic screenshots on failure, and parallel execution</li>
-                            <li>CI/CD pipeline runs on every push with HTML reports</li>
-                        </ul>
+                    <details class="bento-item">
+                        <summary>🧪 <strong>AI Agent Quality Sandbox</strong> <span>Multi‑Agent Adversarial Testing</span></summary>
+                        <p>Doer, Adversary, and Judge agents evaluate AI safety, bias, and correctness under prompt injection attacks. <a href="https://github.com/kallurayaankit/ai-agent-quality-sandbox" target="_blank">[repo]</a></p>
+                    </details>
 
-                        <!-- Project 2 -->
-                        <p>
-                            <b>AI Agent Validation Framework</b> | Python, Pytest, LLM-as-Judge<br>
-                            <i>AI Testing</i>
-                            <a href="https://github.com/kallurayaankit/ai-agent-validation-framework" class="btn btn-info btn-sm" role="button">Github Link</a>
-                        </p>
-                        <ul>
-                            <li>Validates AI agent responses using LLM‑as‑a‑Judge with mock MCP client</li>
-                            <li>Checks for required content, sentiment, and hallucinations</li>
-                            <li>Parameterized JSON test cases, parallel execution, HTML reports, and CI/CD</li>
-                        </ul>
+                    <details class="bento-item">
+                        <summary>🔌 <strong>API Test Suite</strong> <span>Python, Requests, JSON Schema</span></summary>
+                        <p>CRUD testing with schema validation, negative tests, and LLM‑generated test cases. <a href="https://github.com/kallurayaankit/api-test-suite" target="_blank">[repo]</a></p>
+                    </details>
 
-                        <!-- Project 3 – AI Agent Quality Sandbox -->
-                        <p>
-                            <b>AI Agent Quality Sandbox: Multi-Agent Adversarial Testing</b> | Python, Pytest, Mock MCP, JSON<br>
-                            <i>AI Testing / Adversarial Testing</i>
-                            <a href="https://github.com/kallurayaankit/ai-agent-quality-sandbox" class="btn btn-info btn-sm" role="button">Github Link</a>
-                        </p>
-                        <ul>
-                            <li>Multi-agent test sandbox that evaluates AI systems for security, bias, and correctness under adversarial attack</li>
-                            <li>Doer Agent answers user queries (mock RAG), Adversary Agent launches prompt injection attacks</li>
-                            <li>Judge Agent scores responses for safety, bias, and performance</li>
-                            <li>All scenarios driven by a JSON file — new tests added without code</li>
-                            <li>Full CI/CD pipeline with HTML reports and GitHub Actions</li>
-                        </ul>
+                    <details class="bento-item">
+                        <summary>🗄️ <strong>MongoDB + Playwright Data Validation</strong> <span>Python, MongoDB, Flask</span></summary>
+                        <p>End‑to‑end validation: seeds DB, automates UI, then verifies backend state. <a href="https://github.com/kallurayaankit/mongodb-playwright-data-validation" target="_blank">[repo]</a></p>
+                    </details>
 
-                        <!-- Project 4 -->
-                        <p>
-                            <b>API Test Suite</b> | Python, Pytest, Requests, JSONSchema<br>
-                            <i>API Testing</i>
-                            <a href="https://github.com/kallurayaankit/api-test-suite" class="btn btn-info btn-sm" role="button">Github Link</a>
-                        </p>
-                        <ul>
-                            <li>CRUD operations with JSON Schema validation and negative testing</li>
-                            <li>Allure reports and CI/CD with GitHub Actions</li>
-                            <li>LLM-powered test case generation from OpenAPI specs</li>
-                        </ul>
+                    <details class="bento-item">
+                        <summary>⚡ <strong>Locust Performance Test Suite</strong> <span>Python, Locust, Docker</span></summary>
+                        <p>Simulates load, asserts p95 latency SLA, and fails CI if threshold is breached. <a href="https://github.com/kallurayaankit/locust-performance-suite" target="_blank">[repo]</a></p>
+                    </details>
 
-                        <!-- Project 5 -->
-                        <p>
-                            <b>MongoDB + Playwright Data Validation Pipeline</b> | Python, MongoDB, Flask<br>
-                            <i>End-to-End Data Testing</i>
-                            <a href="https://github.com/kallurayaankit/mongodb-playwright-data-validation" class="btn btn-info btn-sm" role="button">Github Link</a>
-                        </p>
-                        <ul>
-                            <li>End-to-end validation: seeds MongoDB, automates UI with Playwright, then queries database to verify changes</li>
-                            <li>Data-driven UI testing with real database validation</li>
-                            <li>CI/CD with MongoDB service container</li>
-                        </ul>
+                    <details class="bento-item">
+                        <summary>☕ <strong>Selenium Java Legacy Test Pack</strong> <span>Java, Maven, TestNG</span></summary>
+                        <p>Data‑driven UI tests with Page Object Model, WebDriverManager, and headless CI. <a href="https://github.com/kallurayaankit/selenium-java-legacy" target="_blank">[repo]</a></p>
+                    </details>
 
-                        <!-- Project 6 -->
-                        <p>
-                            <b>Locust Performance Test Suite</b> | Python, Locust, Flask, Docker<br>
-                            <i>Performance Testing</i>
-                            <a href="https://github.com/kallurayaankit/locust-performance-suite" class="btn btn-info btn-sm" role="button">Github Link</a>
-                        </p>
-                        <ul>
-                            <li>Simulates load against a Flask app and asserts p95 latency SLA thresholds</li>
-                            <li>HTML reports generated; pipeline fails automatically if SLA is breached</li>
-                            <li>Runs in CI/CD on every push and daily schedule</li>
-                        </ul>
+                    <details class="bento-item">
+                        <summary>📜 <strong>Pact Contract Testing</strong> <span>Python, Pact, Flask</span></summary>
+                        <p>Consumer‑driven contract tests with automatic provider verification and CI artifacts. <a href="https://github.com/kallurayaankit/pact-contract-testing" target="_blank">[repo]</a></p>
+                    </details>
 
-                        <!-- Project 7 -->
-                        <p>
-                            <b>Selenium Java Legacy Test Pack</b> | Selenium WebDriver, Java, Maven, TestNG<br>
-                            <i>UI Test Automation</i>
-                            <a href="https://github.com/kallurayaankit/selenium-java-legacy" class="btn btn-info btn-sm" role="button">Github Link</a>
-                        </p>
-                        <ul>
-                            <li>Built a test automation framework using Selenium WebDriver with Java, Maven, TestNG, and Page Object Model</li>
-                            <li>Data‑driven login tests with TestNG DataProvider</li>
-                            <li>Page Object Model (LoginPage, InventoryPage)</li>
-                            <li>WebDriverManager for automatic browser driver handling</li>
-                            <li>Headless Chrome execution in CI</li>
-                            <li>GitHub Actions CI/CD pipeline with TestNG reports</li>
-                        </ul>
+                    <details class="bento-item">
+                        <summary>📱 <strong>Mobile Test Automation</strong> <span>Playwright, Device Emulation</span></summary>
+                        <p>iPhone 13 viewport testing without Appium, validating responsive UI. <a href="https://github.com/kallurayaankit/mobile-test-automation" target="_blank">[repo]</a></p>
+                    </details>
 
-                        <!-- Project 8 – Pact Contract Testing -->
-                        <p>
-                            <b>Pact Contract Testing</b> | Python, Pact, Flask, GitHub Actions<br>
-                            <i>Contract Testing</i>
-                            <a href="https://github.com/kallurayaankit/pact-contract-testing" class="btn btn-info btn-sm" role="button">Github Link</a>
-                        </p>
-                        <ul>
-                            <li>Consumer‑driven contract testing using the Pact pattern</li>
-                            <li>A Python consumer defines expected API behaviour (contract), a Flask provider is verified against it</li>
-                            <li>Consumer generates a JSON pact file from expectations</li>
-                            <li>Provider is verified automatically against the contract</li>
-                            <li>Pure Python, no native dependencies – works anywhere</li>
-                            <li>GitHub Actions CI uploads the pact file as an artifact</li>
-                        </ul>
+                    <details class="bento-item">
+                        <summary>🔐 <strong>Security Test Automation</strong> <span>OWASP ZAP, Docker, CI</span></summary>
+                        <p>Automated scanning pipeline that fails on high/medium risk alerts. <a href="https://github.com/kallurayaankit/security-zap-automation" target="_blank">[repo]</a></p>
+                    </details>
 
-                        <!-- Project 9 – Mobile Test Automation with Playwright -->
-                        <p>
-                            <b>Mobile Test Automation with Playwright</b> | Playwright, Python, Device Emulation<br>
-                            <i>Mobile Testing</i>
-                            <a href="https://github.com/kallurayaankit/mobile-test-automation" class="btn btn-info btn-sm" role="button">Github Link</a>
-                        </p>
-                        <ul>
-                            <li>Mobile web testing using Playwright's built‑in device emulation (iPhone 13)</li>
-                            <li>Validates responsive UI on a real mobile viewport without Appium</li>
-                            <li>Automating mobile experiences with modern tooling</li>
-                            <li>Pure Python, no native dependencies – works anywhere</li>
-                        </ul>
+                    <details class="bento-item">
+                        <summary>📊 <strong>Data Quality Validation</strong> <span>pandas, pytest</span></summary>
+                        <p>CSV validation for nulls, duplicates, range checks, with error reports. <a href="https://github.com/kallurayaankit/data-quality-validation" target="_blank">[repo]</a></p>
+                    </details>
 
-                        <!-- Project 10 – Security Test Automation with OWASP ZAP -->
-                        <p>
-                            <b>Security Test Automation with OWASP ZAP</b> | OWASP ZAP, Python, Pytest, Docker, GitHub Actions<br>
-                            <i>Security Testing</i>
-                            <a href="https://github.com/kallurayaankit/security-zap-automation" class="btn btn-info btn-sm" role="button">Github Link</a>
-                        </p>
-                        <ul>
-                            <li>Automated security scanning pipeline using OWASP ZAP, pytest, and GitHub Actions</li>
-                            <li>Spiders and actively scans a target web application</li>
-                            <li>Fails the build if high‑ or medium‑risk alerts are found</li>
-                            <li>Runs in CI using the official ZAP Docker container</li>
-                            <li>Currently scans a safe target to keep the badge green, switch to a vulnerable site to demonstrate the gate</li>
-                        </ul>
-
-                        <!-- Project 11 – Data Quality Validation -->
-                        <p>
-                            <b>Data Quality Validation</b> | Python, pandas, pytest, GitHub Actions<br>
-                            <i>Data Quality</i>
-                            <a href="https://github.com/kallurayaankit/data-quality-validation" class="btn btn-info btn-sm" role="button">Github Link</a>
-                        </p>
-                        <ul>
-                            <li>Lightweight data quality test suite using pandas and pytest</li>
-                            <li>Validates CSV data for missing values, duplicate IDs, and out‑of‑range values</li>
-                            <li>Checks for nulls in critical columns and enforces unique IDs</li>
-                            <li>Validates numeric value ranges and writes a validation error report on failure</li>
-                            <li>Fails on broken data — proving any dataset can be tested like code</li>
-                            <li>CI/CD with GitHub Actions and a green badge</li>
-                        </ul>
-
-                        <!-- ✅ NEW PROJECT – AI Quality Ops Platform -->
-                        <p>
-                            <b>AI Quality Ops Platform</b> | Python, Pytest, FastAPI, Docker, GitHub Actions<br>
-                            <i>AI Quality Engineering / Platform Architecture</i>
-                            <a href="https://github.com/kallurayaankit/ai-quality-ops-platform" class="btn btn-info btn-sm" role="button">Github Link</a>
-                            <a href="https://ai-quality-ops-platform-production.up.railway.app/ui" class="btn btn-success btn-sm" role="button">Live QA‑as‑a‑Service</a>
-                        </p>
-                        <ul>
-                            <li>End‑to‑end AI Quality Operations ecosystem – validates, monitors, and guards every aspect of an AI product</li>
-                            <li>Five automated quality pillars: Data Integrity, Accuracy, Security & Bias, Performance & Cost, Observability & Drift</li>
-                            <li>Orchestrator reads a JSON master test plan and dispatches tests to all pillars in parallel</li>
-                            <li>Integrates all 11 existing QA projects as micro‑services (adversarial sandbox, medical RAG, locust, ZAP, contract tests, etc.)</li>
-                            <li>QA‑as‑a‑Service API + web UI – anyone can paste an AI endpoint and get a quality report</li>
-                            <li>Fully containerised with Docker Compose, CI/CD on every push, and deployed live to Railway</li>
-                        </ul>
-
-                    </div>
-                </div><br>
-
-                <!-- Relevant Coursework Section -->
-                <div class="bg-light-white shadow p-3 rounded">
-                    <div class="section">
-                        <p class="section-header">📚 Relevant Coursework</p>
-                        <hr>
-                        <h4>Test Automation & Quality Engineering</h4>
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <td>UI Automation (Playwright)</td>
-                                    <td>API Testing (REST/Schema)</td>
-                                </tr>
-                                <tr>
-                                    <td>Performance Testing (Locust)</td>
-                                    <td>AI Agent Testing</td>
-                                </tr>
-                                <tr>
-                                    <td>Data Validation (MongoDB)</td>
-                                    <td>CI/CD (GitHub Actions)</td>
-                                </tr>
-                                <tr>
-                                    <td>Contract Testing (Pact)</td>
-                                    <td>Selenium WebDriver (Java)</td>
-                                </tr>
-                                <tr>
-                                    <td>Mobile Testing (Playwright)</td>
-                                    <td>Device Emulation</td>
-                                </tr>
-                                <tr>
-                                    <td>Security Testing (OWASP ZAP)</td>
-                                    <td>Docker</td>
-                                </tr>
-                                <tr>
-                                    <td>Data Quality (pandas)</td>
-                                    <td>pytest</td>
-                                </tr>
-                                <tr>
-                                    <td>Multi-Agent Adversarial Testing</td>
-                                    <td>Prompt Engineering</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
-            </div> <!-- End Right Column -->
-        </div>
+            </section>
+
+            <!-- Relevant Coursework -->
+            <section class="section-card glass">
+                <h2>📚 Relevant Coursework</h2>
+                <div class="coursework-grid">
+                    <span>UI Automation (Playwright)</span><span>API Testing (REST/Schema)</span>
+                    <span>Performance Testing (Locust)</span><span>AI Agent Testing</span>
+                    <span>Data Validation (MongoDB)</span><span>CI/CD (GitHub Actions)</span>
+                    <span>Contract Testing (Pact)</span><span>Selenium WebDriver (Java)</span>
+                    <span>Mobile Testing (Playwright)</span><span>Device Emulation</span>
+                    <span>Security Testing (OWASP ZAP)</span><span>Docker</span>
+                    <span>Data Quality (pandas)</span><span>pytest</span>
+                    <span>Multi‑Agent Adversarial Testing</span><span>Prompt Engineering</span>
+                </div>
+            </section>
+
+            <footer>
+                <p>© 2024 Ankit Kalluraya. Built with pure HTML & CSS — zero frameworks.</p>
+            </footer>
+
+        </main>
     </div>
 
-    <!-- Footer -->
-    <footer class="container-fluid bg-dark">
-        Copyright © 2026 Ankit Kalluraya.
-        Powered by <a href="https://getbootstrap.com/">Bootstrap</a>
-    </footer>
 </body>
 </html>
