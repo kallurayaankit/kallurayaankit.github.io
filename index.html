@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Ankit Kalluraya - Software QA Engineer">
     <meta name="author" content="Ankit Kalluraya">
-    <title>✨ Ankit Kalluraya | QA Portfolio</title>
+    <title>⚔️ Ankit Kalluraya | QA Adventure</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="shortcut icon" href="images/favicon.ico?v=2">
 </head>
@@ -16,16 +16,23 @@
         <span>🧪</span><span>🤖</span><span>⚡</span><span>🔐</span><span>📱</span><span>📊</span><span>🎭</span>
     </div>
 
+    <!-- Mouse trail canvas -->
+    <canvas id="trailCanvas"></canvas>
+
     <div class="layout">
 
-        <!-- ========== STICKY SIDEBAR ========== -->
+        <!-- ========== STICKY SIDEBAR (CHARACTER PANEL) ========== -->
         <aside class="sidebar">
             <div class="profile-card glass tilt-card">
+                <div class="xp-badge">⚡ Level <span id="levelDisplay">1</span></div>
+                <div class="xp-bar-container">
+                    <div class="xp-bar-fill" id="xpBar"></div>
+                    <span class="xp-text" id="xpText">0 / 100 XP</span>
+                </div>
                 <img src="images/your-profile.jpg" alt="Ankit Kalluraya" class="profile-pic">
                 <h1>Ankit Kalluraya</h1>
-                <p class="tagline">
-                    <span class="typewriter">Software QA Engineer | Test Automation Specialist</span>
-                </p>
+                <!-- Tagline now constrained to card width with proper wrapping -->
+                <p class="tagline">Software QA Engineer |<br>Test Automation Specialist</p>
                 <div class="contact-links">
                     <a href="https://github.com/kallurayaankit" target="_blank" class="btn-glow">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
@@ -41,10 +48,22 @@
                     <span>📧 kallurayaankit@gmail.com</span>
                     <span>📍 Melbourne, VIC, Australia</span>
                 </div>
+                <!-- Gamification: hidden mini-game trigger -->
+                <button id="miniGameBtn" class="btn-glow" style="margin-top:1rem;">⚔️ Test My Skills</button>
+                <div id="miniGameArea" style="display:none; margin-top:1rem;">
+                    <p>Click the target <span id="gameScore">0</span> times in 5s!</p>
+                    <div id="gameTarget" style="width:60px;height:60px;background:#ff0055;border-radius:50%;margin:10px auto;cursor:pointer;"></div>
+                    <button id="startGameBtn" class="btn-resume">Start Challenge</button>
+                </div>
+                <!-- Achievement badges -->
+                <div class="achievements" id="achievementsContainer">
+                    <span class="badge-achievement" id="badgeExplorer" style="display:none;">🌟 Explorer</span>
+                    <span class="badge-achievement" id="badgeMaster" style="display:none;">🏅 Project Master</span>
+                </div>
             </div>
         </aside>
 
-        <!-- ========== MAIN CONTENT ========== -->
+        <!-- ========== MAIN CONTENT (QUEST LOG) ========== -->
         <main class="content">
 
             <!-- Education -->
@@ -91,67 +110,67 @@
                 </div>
             </section>
 
-            <!-- Projects – Interactive Bento Grid -->
+            <!-- Projects (Quest Items) – clicking them grants XP -->
             <section class="section-card glass">
-                <h2>📁 Projects</h2>
-                <div class="bento-grid">
+                <h2>📁 Quests (Projects)</h2>
+                <div class="bento-grid" id="projectGrid">
 
-                    <details class="bento-item tilt-card">
+                    <details class="bento-item tilt-card project-card">
                         <summary><span>🎭 <strong>Playwright Test Automation Framework</strong></span> <span>Python, Pytest</span></summary>
                         <p>Scalable UI test framework with Page Object Model, JSON data-driven tests, parallel execution, and CI/CD. <a href="https://github.com/kallurayaankit/playwright-framework" target="_blank">[repo]</a></p>
                     </details>
 
-                    <details class="bento-item tilt-card">
+                    <details class="bento-item tilt-card project-card">
                         <summary><span>🤖 <strong>AI Agent Validation Framework</strong></span> <span>Python, LLM‑as‑Judge</span></summary>
                         <p>Validates AI answers for correctness, sentiment, and hallucinations using a mock MCP client and judge module. <a href="https://github.com/kallurayaankit/ai-agent-validation-framework" target="_blank">[repo]</a></p>
                     </details>
 
-                    <details class="bento-item tilt-card">
+                    <details class="bento-item tilt-card project-card">
                         <summary><span>🧪 <strong>AI Agent Quality Sandbox</strong></span> <span>Multi‑Agent Adversarial Testing</span></summary>
                         <p>Doer, Adversary, and Judge agents evaluate AI safety, bias, and correctness under prompt injection attacks. <a href="https://github.com/kallurayaankit/ai-agent-quality-sandbox" target="_blank">[repo]</a></p>
                     </details>
 
-                    <details class="bento-item tilt-card">
+                    <details class="bento-item tilt-card project-card">
                         <summary><span>🏭 <strong>AI Quality Ops Platform</strong></span> <span>AI Quality Operations</span></summary>
                         <p>End‑to‑end AI Quality ecosystem: Data Integrity, Accuracy, Security & Bias, Performance & Cost, Observability & Drift pillars. Orchestrator dispatches tests in parallel, integrates all 11 QA projects as micro‑services, with QA‑as‑a‑Service API + web UI. Docker Compose, CI/CD, deployed on Railway. <em>(Private repository – available on request)</em></p>
                     </details>
 
-                    <details class="bento-item tilt-card">
+                    <details class="bento-item tilt-card project-card">
                         <summary><span>🔌 <strong>API Test Suite</strong></span> <span>Python, Requests, JSON Schema</span></summary>
                         <p>CRUD testing with schema validation, negative tests, and LLM‑generated test cases. <a href="https://github.com/kallurayaankit/api-test-suite" target="_blank">[repo]</a></p>
                     </details>
 
-                    <details class="bento-item tilt-card">
+                    <details class="bento-item tilt-card project-card">
                         <summary><span>🗄️ <strong>MongoDB + Playwright Data Validation</strong></span> <span>Python, MongoDB, Flask</span></summary>
                         <p>End‑to‑end validation: seeds DB, automates UI, then verifies backend state. <a href="https://github.com/kallurayaankit/mongodb-playwright-data-validation" target="_blank">[repo]</a></p>
                     </details>
 
-                    <details class="bento-item tilt-card">
+                    <details class="bento-item tilt-card project-card">
                         <summary><span>⚡ <strong>Locust Performance Test Suite</strong></span> <span>Python, Locust, Docker</span></summary>
                         <p>Simulates load, asserts p95 latency SLA, and fails CI if threshold is breached. <a href="https://github.com/kallurayaankit/locust-performance-suite" target="_blank">[repo]</a></p>
                     </details>
 
-                    <details class="bento-item tilt-card">
+                    <details class="bento-item tilt-card project-card">
                         <summary><span>☕ <strong>Selenium Java Legacy Test Pack</strong></span> <span>Java, Maven, TestNG</span></summary>
                         <p>Data‑driven UI tests with Page Object Model, WebDriverManager, and headless CI. <a href="https://github.com/kallurayaankit/selenium-java-legacy" target="_blank">[repo]</a></p>
                     </details>
 
-                    <details class="bento-item tilt-card">
+                    <details class="bento-item tilt-card project-card">
                         <summary><span>📜 <strong>Pact Contract Testing</strong></span> <span>Python, Pact, Flask</span></summary>
                         <p>Consumer‑driven contract tests with automatic provider verification and CI artifacts. <a href="https://github.com/kallurayaankit/pact-contract-testing" target="_blank">[repo]</a></p>
                     </details>
 
-                    <details class="bento-item tilt-card">
+                    <details class="bento-item tilt-card project-card">
                         <summary><span>📱 <strong>Mobile Test Automation</strong></span> <span>Playwright, Device Emulation</span></summary>
                         <p>iPhone 13 viewport testing without Appium, validating responsive UI. <a href="https://github.com/kallurayaankit/mobile-test-automation" target="_blank">[repo]</a></p>
                     </details>
 
-                    <details class="bento-item tilt-card">
+                    <details class="bento-item tilt-card project-card">
                         <summary><span>🔐 <strong>Security Test Automation</strong></span> <span>OWASP ZAP, Docker, CI</span></summary>
                         <p>Automated scanning pipeline that fails on high/medium risk alerts. <a href="https://github.com/kallurayaankit/security-zap-automation" target="_blank">[repo]</a></p>
                     </details>
 
-                    <details class="bento-item tilt-card">
+                    <details class="bento-item tilt-card project-card">
                         <summary><span>📊 <strong>Data Quality Validation</strong></span> <span>pandas, pytest</span></summary>
                         <p>CSV validation for nulls, duplicates, range checks, with error reports. <a href="https://github.com/kallurayaankit/data-quality-validation" target="_blank">[repo]</a></p>
                     </details>
@@ -176,30 +195,139 @@
             </section>
 
             <footer>
-                <p>© 2026 Ankit Kalluraya. Built with ❤️ </p>
+                <p>© 2026 Ankit Kalluraya. Built with ❤️ and zero frameworks — now gamified! 🎮</p>
             </footer>
 
         </main>
     </div>
 
-    <!-- Confetti script for resume button -->
+    <!-- Gamification JavaScript -->
     <script>
-        (function() {
-            const btn = document.getElementById('resumeBtn');
-            if (!btn) return;
-            btn.addEventListener('click', function(e) {
-                // Small confetti burst
-                for (let i = 0; i < 30; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'confetti';
-                    particle.style.left = (e.clientX + (Math.random() - 0.5) * 100) + 'px';
-                    particle.style.top = (e.clientY - 20) + 'px';
-                    particle.style.background = `hsl(${Math.random() * 360}, 80%, 60%)`;
-                    particle.style.animationDuration = (Math.random() * 1 + 0.5) + 's';
-                    document.body.appendChild(particle);
-                    setTimeout(() => particle.remove(), 1500);
-                }
+        (function(){
+            // XP System
+            let xp = 0, level = 1, xpToNext = 100;
+            const xpBar = document.getElementById('xpBar');
+            const xpText = document.getElementById('xpText');
+            const levelDisplay = document.getElementById('levelDisplay');
+            const badgeExplorer = document.getElementById('badgeExplorer');
+            const badgeMaster = document.getElementById('badgeMaster');
+
+            function updateUI() {
+                const pct = (xp / xpToNext) * 100;
+                xpBar.style.width = pct + '%';
+                xpText.textContent = xp + ' / ' + xpToNext + ' XP';
+                levelDisplay.textContent = level;
+                if (xp >= xpToNext) levelUp();
+            }
+
+            function levelUp() {
+                level++;
+                xp = xp - xpToNext;
+                xpToNext = Math.floor(xpToNext * 1.5);
+                createConfetti(50);
+                alert('🎉 Level Up! You are now Level ' + level + '!');
+                updateUI();
+                if (level >= 3) badgeMaster.style.display = 'inline-block';
+            }
+
+            function addXP(amount) {
+                xp += amount;
+                updateUI();
+                if (xp >= 20 && badgeExplorer.style.display === 'none') badgeExplorer.style.display = 'inline-block';
+            }
+
+            // Add XP when a project card is toggled open
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.addEventListener('toggle', function() {
+                    if (this.open) addXP(15);
+                });
             });
+
+            // Resume confetti + XP
+            document.getElementById('resumeBtn').addEventListener('click', function(e) {
+                addXP(25);
+                createConfetti(40);
+            });
+
+            // Mini-game
+            const miniGameBtn = document.getElementById('miniGameBtn');
+            const miniGameArea = document.getElementById('miniGameArea');
+            const gameTarget = document.getElementById('gameTarget');
+            const startGameBtn = document.getElementById('startGameBtn');
+            const gameScoreSpan = document.getElementById('gameScore');
+            let gameScore = 0, gameActive = false, gameTimer;
+
+            miniGameBtn.addEventListener('click', () => {
+                miniGameArea.style.display = miniGameArea.style.display === 'none' ? 'block' : 'none';
+            });
+
+            startGameBtn.addEventListener('click', () => {
+                if (gameActive) return;
+                gameScore = 0;
+                gameScoreSpan.textContent = '0';
+                gameActive = true;
+                gameTarget.style.background = '#ff0055';
+                startGameBtn.disabled = true;
+                gameTimer = setTimeout(endGame, 5000);
+            });
+
+            gameTarget.addEventListener('click', () => {
+                if (!gameActive) return;
+                gameScore++;
+                gameScoreSpan.textContent = gameScore;
+                gameTarget.style.background = '#' + Math.floor(Math.random()*16777215).toString(16);
+            });
+
+            function endGame() {
+                gameActive = false;
+                startGameBtn.disabled = false;
+                gameTarget.style.background = '#ff0055';
+                addXP(gameScore * 2);
+                alert('⚔️ Challenge complete! You clicked ' + gameScore + ' times. +' + gameScore*2 + ' XP!');
+            }
+
+            // Confetti creator
+            function createConfetti(count) {
+                for (let i=0; i<count; i++) {
+                    const p = document.createElement('div');
+                    p.className = 'confetti';
+                    p.style.left = Math.random() * 100 + '%';
+                    p.style.top = Math.random() * 100 + '%';
+                    p.style.background = `hsl(${Math.random()*360}, 80%, 60%)`;
+                    document.body.appendChild(p);
+                    setTimeout(() => p.remove(), 1500);
+                }
+            }
+
+            // Mouse trail canvas
+            const canvas = document.getElementById('trailCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            let particles = [];
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+            window.addEventListener('mousemove', (e) => {
+                particles.push({x: e.clientX, y: e.clientY, r: 3, alpha: 1});
+            });
+            function animateTrail() {
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                for (let i=particles.length-1; i>=0; i--) {
+                    const p = particles[i];
+                    p.alpha -= 0.02;
+                    if (p.alpha <= 0) { particles.splice(i,1); continue; }
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+                    ctx.fillStyle = `rgba(32,178,170,${p.alpha})`;
+                    ctx.fill();
+                }
+                requestAnimationFrame(animateTrail);
+            }
+            animateTrail();
+
+            updateUI();
         })();
     </script>
 </body>
