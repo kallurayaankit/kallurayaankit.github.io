@@ -1,14 +1,9 @@
 /* ==========================================================
-   2026 MODERN PORTFOLIO — Glassmorphism + Bento Grid
-   No icon fonts, no JS, pure CSS magic.
+   🌟 INTERACTIVE PLAYGROUND PORTFOLIO
    ========================================================== */
 
 /* ---------- RESET & BASE ---------- */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -17,9 +12,15 @@ body {
     color: #1a1a1a;
     line-height: 1.6;
     min-height: 100vh;
+    overflow-x: hidden;
+    animation: bgShift 12s infinite alternate;
+}
+@keyframes bgShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
-/* Dark mode automatic */
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
     body {
         background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
@@ -27,21 +28,47 @@ body {
     }
 }
 
-/* ---------- GLASS EFFECT ---------- */
-.glass {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
+/* ---------- FLOATING EMOJIS ---------- */
+.floating-emojis {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+.floating-emojis span {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.15;
+    animation: float 8s infinite ease-in-out;
+}
+.floating-emojis span:nth-child(1){ top: 10%; left: 5%; animation-delay: 0s; }
+.floating-emojis span:nth-child(2){ top: 70%; left: 80%; animation-delay: -2s; }
+.floating-emojis span:nth-child(3){ top: 40%; left: 20%; animation-delay: -4s; }
+.floating-emojis span:nth-child(4){ top: 80%; left: 10%; animation-delay: -6s; }
+.floating-emojis span:nth-child(5){ top: 20%; left: 90%; animation-delay: -1s; }
+.floating-emojis span:nth-child(6){ top: 50%; left: 70%; animation-delay: -3s; }
+.floating-emojis span:nth-child(7){ top: 90%; left: 50%; animation-delay: -5s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
 }
 
+/* ---------- GLASS ---------- */
+.glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    padding: 2rem;
+}
 @media (prefers-color-scheme: dark) {
     .glass {
-        background: rgba(20, 20, 40, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(20,20,40,0.5);
+        border: 1px solid rgba(255,255,255,0.1);
     }
 }
 
@@ -52,8 +79,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    position: relative;
+    z-index: 1;
 }
-
 .sidebar {
     width: 320px;
     flex-shrink: 0;
@@ -61,26 +89,18 @@ body {
     top: 2rem;
     align-self: flex-start;
 }
-
 .content {
     flex: 1;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
-
-/* Responsive: stack on mobile */
 @media (max-width: 768px) {
-    .layout {
-        flex-direction: column;
-    }
-    .sidebar {
-        width: 100%;
-        position: static;
-    }
+    .layout { flex-direction: column; }
+    .sidebar { width: 100%; position: static; }
 }
 
-/* ---------- PROFILE CARD ---------- */
+/* ---------- PROFILE ---------- */
 .profile-card {
     text-align: center;
     display: flex;
@@ -88,171 +108,163 @@ body {
     align-items: center;
     gap: 1rem;
 }
-
 .profile-pic {
-    width: 160px;
-    height: 160px;
+    width: 160px; height: 160px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid rgba(255,255,255,0.6);
     box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-
-h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1.2;
+.profile-pic:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 25px rgba(32,178,170,0.5);
 }
+h1 { font-size: 1.8rem; font-weight: 700; }
 
-.tagline {
-    font-size: 1rem;
-    opacity: 0.8;
-}
-
-.contact-links {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.btn-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    border: 1px solid rgba(0,0,0,0.2);
-    background: transparent;
-    color: inherit;
-    text-decoration: none;
-    font-size: 0.85rem;
-    transition: all 0.2s;
-}
-
-.btn-outline:hover {
-    background: rgba(0,0,0,0.05);
-    border-color: #20B2AA;
-}
-
-@media (prefers-color-scheme: dark) {
-    .btn-outline {
-        border-color: rgba(255,255,255,0.3);
-    }
-    .btn-outline:hover {
-        background: rgba(255,255,255,0.1);
-        border-color: #20B2AA;
-    }
-}
-
-.btn-resume {
+/* Typewriter tagline */
+.typewriter {
     display: inline-block;
-    padding: 0.5rem 1.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #20B2AA;
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #20B2AA; }
+}
+
+/* ---------- BUTTONS ---------- */
+.contact-links { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+.btn-glow, .btn-resume {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    padding: 0.6rem 1.4rem; border-radius: 50px;
+    text-decoration: none; font-weight: 600; font-size: 0.9rem;
+    transition: all 0.3s; position: relative;
+    overflow: hidden; z-index: 0;
+}
+.btn-glow {
+    border: 2px solid transparent;
+    background: rgba(255,255,255,0.2);
+    color: inherit;
+    backdrop-filter: blur(4px);
+}
+.btn-glow:hover {
+    border-color: #20B2AA;
+    box-shadow: 0 0 15px rgba(32,178,170,0.4);
+    transform: translateY(-2px);
+}
+.btn-resume {
     background: #20B2AA;
     color: white !important;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background 0.2s;
+    box-shadow: 0 4px 15px rgba(32,178,170,0.4);
 }
-
 .btn-resume:hover {
-    background: #1a8e87;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(32,178,170,0.6);
+}
+.pulse { animation: pulse 2s infinite; }
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(32,178,170,0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(32,178,170,0); }
+    100% { box-shadow: 0 0 0 0 rgba(32,178,170,0); }
 }
 
-.info-details {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
+/* Ripple effect */
+.btn-glow::after, .btn-resume::after {
+    content: ""; position: absolute; top: 50%; left: 50%;
+    width: 0; height: 0; border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+.btn-glow:active::after, .btn-resume:active::after {
+    width: 300px; height: 300px;
 }
 
-/* ---------- SECTION CARDS ---------- */
-.section-card h2 {
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
+/* ---------- TILT CARDS (3D hover) ---------- */
+.tilt-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    perspective: 600px;
+}
+.tilt-card:hover {
+    transform: rotateX(2deg) rotateY(2deg) scale(1.02);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.15);
 }
 
-/* ---------- SKILLS GRID ---------- */
+/* ---------- SKILLS ---------- */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
 }
-
-.skill-group h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
+.skill-group h3 { margin-bottom: 0.5rem; }
 .skill-group ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
+    list-style: none; padding: 0;
+    display: flex; flex-wrap: wrap; gap: 0.3rem;
 }
-
 .skill-group li {
-    background: rgba(32, 178, 170, 0.1);
-    padding: 0.2rem 0.8rem;
-    border-radius: 20px;
+    background: rgba(32,178,170,0.1);
+    padding: 0.3rem 0.8rem; border-radius: 20px;
     font-size: 0.85rem;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+.skill-group li:hover {
+    background: rgba(32,178,170,0.2);
+    border-color: #20B2AA;
+    transform: translateY(-2px);
 }
 
-/* ---------- BENTO GRID (Projects) ---------- */
+/* ---------- BENTO GRID ---------- */
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1rem;
 }
-
 .bento-item {
-    background: rgba(255,255,255,0.2);
-    border-radius: 16px;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.3);
-    backdrop-filter: blur(5px);
     overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.3s ease;
 }
-
 .bento-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    border-color: #20B2AA;
 }
-
 .bento-item summary {
     padding: 1rem;
     cursor: pointer;
-    font-weight: 600;
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; justify-content: space-between; align-items: center;
+    font-weight: 600;
     gap: 0.5rem;
 }
-
-.bento-item summary span {
-    font-size: 0.75rem;
-    opacity: 0.7;
-    white-space: nowrap;
+.bento-item summary span:last-child {
+    font-size: 0.75rem; opacity: 0.7; white-space: nowrap;
 }
-
+.bento-item summary::-webkit-details-marker { display: none; }
+.bento-item summary::after {
+    content: "▼";
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+}
+.bento-item[open] summary::after {
+    transform: rotate(180deg);
+}
 .bento-item p {
-    padding: 0 1rem 1rem 1rem;
-    font-size: 0.95rem;
-    opacity: 0.9;
+    padding: 0 1rem 1rem;
+    font-size: 0.95rem; opacity: 0.9;
 }
-
 .bento-item a {
-    color: #20B2AA;
-    text-decoration: underline;
-}
-
-/* Remove default marker */
-.bento-item summary::-webkit-details-marker {
-    display: none;
+    color: #20B2AA; text-decoration: underline;
 }
 
 /* ---------- COURSEWORK ---------- */
@@ -261,37 +273,39 @@ h1 {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 0.5rem;
 }
-
 .coursework-grid span {
     background: rgba(0,0,0,0.05);
-    padding: 0.4rem 0.8rem;
-    border-radius: 8px;
+    padding: 0.4rem 0.8rem; border-radius: 8px;
     font-size: 0.85rem;
+    transition: background 0.3s;
+}
+.coursework-grid span:hover {
+    background: rgba(32,178,170,0.1);
+}
+
+/* ---------- CONFETTI ---------- */
+.confetti {
+    position: fixed;
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 9999;
+    animation: confettiFall 1s ease-out forwards;
+}
+@keyframes confettiFall {
+    0% { opacity: 1; transform: translateY(0) rotate(0deg); }
+    100% { opacity: 0; transform: translateY(100px) rotate(720deg); }
 }
 
 /* ---------- FOOTER ---------- */
-footer {
-    text-align: center;
-    opacity: 0.6;
-    font-size: 0.85rem;
-    margin-top: 1rem;
-}
+footer { text-align: center; opacity: 0.6; font-size: 0.85rem; margin-top: 1rem; }
 
 /* ---------- ANIMATIONS ---------- */
 @keyframes fadeSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
-
-.section-card {
-    animation: fadeSlideIn 0.6s ease both;
-}
+.section-card { animation: fadeSlideIn 0.6s ease both; }
 .section-card:nth-child(1) { animation-delay: 0.1s; }
 .section-card:nth-child(2) { animation-delay: 0.2s; }
 .section-card:nth-child(3) { animation-delay: 0.3s; }
