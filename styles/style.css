@@ -241,6 +241,23 @@ h1 {
 }
 
 /* ---------- COURSEWORK ---------- */
+.projects-intro { margin-bottom: 1rem; }
+.project-group { margin: 1.5rem 0 1rem; font-size: 1.1rem; }
+.project-card { padding-top: 1rem; }
+.project-card h4 { padding: 0 1rem 0.75rem; font-size: 1.15rem; }
+.project-card .project-category { font-size: 0.75rem; font-weight: 700; color: #27665a; }
+.project-card .project-note { font-size: 0.8rem; }
+.project-card .project-tech { font-size: 0.8rem; font-weight: 600; }
+.project-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.project-card a, .projects-more a { color: #247261; }
+.flagship { border-color: #7c9eb2; }
+.projects-more { margin-top: 1.5rem; }
+#projects .bento-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+@media (prefers-color-scheme: dark) {
+    .project-card p { color: #d3d8df; }
+    .project-card .project-category, .project-card a, .projects-more a { color: #6cdbc2; }
+}
+
 .coursework-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));

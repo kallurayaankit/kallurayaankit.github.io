@@ -84,73 +84,61 @@
                 </div>
             </section>
 
-            <!-- Projects – Zen Bento Grid -->
-            <section class="section-card glass fade-up">
-                <h2>📁 Projects</h2>
-                <div class="bento-grid">
+            <!-- Selected public projects -->
+            <section class="section-card glass fade-up" id="projects">
+                <h2>Selected Projects</h2>
+                <p class="projects-intro">Building trustworthy AI systems and useful standalone AI applications.</p>
+                <h3 class="project-group">Flagship projects</h3>
+                <div class="bento-grid">                    <article class="bento-item project-card flagship">
+                        <p class="project-category">Flagship · AI QA</p>
+                        <h4>ReleaseRadar</h4>
+                        <p>A focused regression-testing prototype that exposes gaps in a passing checkout test suite. Freeze assertions, challenge three deliberately seeded bugs, review proposed additions, and rerun unchanged assertions against the corrected build.</p>
+                        <p class="project-note">Prepared and imported cases run in the hosted demo. Live test generation requires a configured local server. Scope: one checkout requirement, not release certification.</p>
+                        <p class="project-tech">JavaScript · OpenAI · Playwright · GitHub Actions</p>
+                        <p class="project-links"><a href="https://github.com/kallurayaankit/release-radar" target="_blank" rel="noopener noreferrer">Source code</a> <a href="https://releaseradar-sydney-demo.glossychar1.chatgpt.site/" target="_blank" rel="noopener noreferrer">Explore demo</a> <a href="https://github.com/kallurayaankit/release-radar#challenge-workflow" target="_blank" rel="noopener noreferrer">Workflow & evidence</a></p>
+                    </article>
+                    <article class="bento-item project-card flagship">
+                        <p class="project-category">Flagship · Independent AI</p>
+                        <h4>Jev Flight Agent</h4>
+                        <p>A standalone browser agent for natural-language flight searches. Jev selects typed operations and observed DOM targets; a separate language model supplies field text, and Playwright executes the actions. The loop checks stale page state and bounds execution.</p>
+                        <p class="project-note">Local application requiring API keys and Chrome. Includes recorded demonstrations and search-result verification; it is a search prototype, not a booking service.</p>
+                        <p class="project-tech">Python · Jev / TypeSafe AI · Playwright</p>
+                        <p class="project-links"><a href="https://github.com/kallurayaankit/jev-flight-agent" target="_blank" rel="noopener noreferrer">Source code</a> <a href="https://github.com/kallurayaankit/jev-flight-agent/blob/main/docs/demo.mp4" target="_blank" rel="noopener noreferrer">Recorded demonstration</a></p>
+                    </article></div>
+                <h3 class="project-group">Supporting projects</h3>
+                <div class="bento-grid">                    <article class="bento-item project-card">
+                        <p class="project-category">Supporting · AI evaluation</p>
+                        <h4>Assay</h4>
+                        <p>Calibrates an LLM judge against human-labeled examples using Cohen's kappa. The default gate blocks uncalibrated scoring; reports retain calibration provenance and track model-call budgets.</p>
 
-                    <!-- Project cards (exact same content as before) -->
-                    <details class="bento-item tilt-card">
-                        <summary><span>🎭 <strong>Playwright Test Automation Framework</strong></span> <span>Python, Pytest</span></summary>
-                        <p>Scalable UI test framework with Page Object Model, JSON data-driven tests, parallel execution, and CI/CD. <a href="https://github.com/kallurayaankit/playwright-framework" target="_blank">[repo]</a></p>
-                    </details>
+                        <p class="project-tech">Python · Ollama · LLM evaluation</p>
+                        <p class="project-links"><a href="https://github.com/kallurayaankit/assay" target="_blank" rel="noopener noreferrer">Source code</a></p>
+                    </article>
+                    <article class="bento-item project-card">
+                        <p class="project-category">Supporting · Independent AI</p>
+                        <h4>Jev Ticket Router</h4>
+                        <p>A FastAPI prototype that classifies support tickets by team, urgency, and customer sentiment in a batched Jev call. Department confidence below 0.6 sends the ticket to human review.</p>
+                        <p class="project-note">Requires a TypeSafe API key. Prototype scope; no production-service claim.</p>
+                        <p class="project-tech">Python · FastAPI · Jev</p>
+                        <p class="project-links"><a href="https://github.com/kallurayaankit/jev-ticket-router" target="_blank" rel="noopener noreferrer">Source code</a></p>
+                    </article>
+                    <article class="bento-item project-card">
+                        <p class="project-category">Supporting · AI QA</p>
+                        <h4>LLMTestKit</h4>
+                        <p>Local-model evaluation and red-team tooling with deterministic checks, a correctness judge, prompt-injection and jailbreak cases, and HTML reports with score provenance.</p>
+                        <p class="project-note">Early-stage toolkit. RAG, groundedness, and broader agent evaluation remain roadmap items.</p>
+                        <p class="project-tech">Python · Ollama · Red teaming</p>
+                        <p class="project-links"><a href="https://github.com/kallurayaankit/llmtestkit" target="_blank" rel="noopener noreferrer">Source code</a></p>
+                    </article>
+                    <article class="bento-item project-card">
+                        <p class="project-category">Supporting · Test automation</p>
+                        <h4>Playwright Test Automation Framework</h4>
+                        <p>Python and Pytest UI automation for SauceDemo, organized with page objects and JSON test data. Includes parallel test execution and a GitHub Actions workflow.</p>
 
-                    <details class="bento-item tilt-card">
-                        <summary><span>🤖 <strong>AI Agent Validation Framework</strong></span> <span>Python, LLM‑as‑Judge</span></summary>
-                        <p>Validates AI answers for correctness, sentiment, and hallucinations using a mock MCP client and judge module. <a href="https://github.com/kallurayaankit/ai-agent-validation-framework" target="_blank">[repo]</a></p>
-                    </details>
-
-                    <details class="bento-item tilt-card">
-                        <summary><span>🧪 <strong>AI Agent Quality Sandbox</strong></span> <span>Multi‑Agent Adversarial Testing</span></summary>
-                        <p>Doer, Adversary, and Judge agents evaluate AI safety, bias, and correctness under prompt injection attacks. <a href="https://github.com/kallurayaankit/ai-agent-quality-sandbox" target="_blank">[repo]</a></p>
-                    </details>
-
-                    <details class="bento-item tilt-card">
-                        <summary><span>🏭 <strong>AI Quality Ops Platform</strong></span> <span>AI Quality Operations</span></summary>
-                        <p>End‑to‑end AI Quality ecosystem: Data Integrity, Accuracy, Security & Bias, Performance & Cost, Observability & Drift pillars. Orchestrator dispatches tests in parallel, integrates all 11 QA projects as micro‑services, with QA‑as‑a‑Service API + web UI. Docker Compose, CI/CD, deployed on Railway. <em>(Private repository – available on request)</em></p>
-                    </details>
-
-                    <details class="bento-item tilt-card">
-                        <summary><span>🔌 <strong>API Test Suite</strong></span> <span>Python, Requests, JSON Schema</span></summary>
-                        <p>CRUD testing with schema validation, negative tests, and LLM‑generated test cases. <a href="https://github.com/kallurayaankit/api-test-suite" target="_blank">[repo]</a></p>
-                    </details>
-
-                    <details class="bento-item tilt-card">
-                        <summary><span>🗄️ <strong>MongoDB + Playwright Data Validation</strong></span> <span>Python, MongoDB, Flask</span></summary>
-                        <p>End‑to‑end validation: seeds DB, automates UI, then verifies backend state. <a href="https://github.com/kallurayaankit/mongodb-playwright-data-validation" target="_blank">[repo]</a></p>
-                    </details>
-
-                    <details class="bento-item tilt-card">
-                        <summary><span>⚡ <strong>Locust Performance Test Suite</strong></span> <span>Python, Locust, Docker</span></summary>
-                        <p>Simulates load, asserts p95 latency SLA, and fails CI if threshold is breached. <a href="https://github.com/kallurayaankit/locust-performance-suite" target="_blank">[repo]</a></p>
-                    </details>
-
-                    <details class="bento-item tilt-card">
-                        <summary><span>☕ <strong>Selenium Java Legacy Test Pack</strong></span> <span>Java, Maven, TestNG</span></summary>
-                        <p>Data‑driven UI tests with Page Object Model, WebDriverManager, and headless CI. <a href="https://github.com/kallurayaankit/selenium-java-legacy" target="_blank">[repo]</a></p>
-                    </details>
-
-                    <details class="bento-item tilt-card">
-                        <summary><span>📜 <strong>Pact Contract Testing</strong></span> <span>Python, Pact, Flask</span></summary>
-                        <p>Consumer‑driven contract tests with automatic provider verification and CI artifacts. <a href="https://github.com/kallurayaankit/pact-contract-testing" target="_blank">[repo]</a></p>
-                    </details>
-
-                    <details class="bento-item tilt-card">
-                        <summary><span>📱 <strong>Mobile Test Automation</strong></span> <span>Playwright, Device Emulation</span></summary>
-                        <p>iPhone 13 viewport testing without Appium, validating responsive UI. <a href="https://github.com/kallurayaankit/mobile-test-automation" target="_blank">[repo]</a></p>
-                    </details>
-
-                    <details class="bento-item tilt-card">
-                        <summary><span>🔐 <strong>Security Test Automation</strong></span> <span>OWASP ZAP, Docker, CI</span></summary>
-                        <p>Automated scanning pipeline that fails on high/medium risk alerts. <a href="https://github.com/kallurayaankit/security-zap-automation" target="_blank">[repo]</a></p>
-                    </details>
-
-                    <details class="bento-item tilt-card">
-                        <summary><span>📊 <strong>Data Quality Validation</strong></span> <span>pandas, pytest</span></summary>
-                        <p>CSV validation for nulls, duplicates, range checks, with error reports. <a href="https://github.com/kallurayaankit/data-quality-validation" target="_blank">[repo]</a></p>
-                    </details>
-
-                </div>
+                        <p class="project-tech">Python · Pytest · Playwright</p>
+                        <p class="project-links"><a href="https://github.com/kallurayaankit/playwright-framework" target="_blank" rel="noopener noreferrer">Source code</a></p>
+                    </article></div>
+                <p class="projects-more"><a href="https://github.com/kallurayaankit?tab=repositories">Explore all public repositories</a></p>
             </section>
 
             <!-- Relevant Coursework -->
