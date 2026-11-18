@@ -26,3 +26,17 @@ function beginGame() {
 }
 start.addEventListener('click', beginGame);
 document.getElementById('game-reset').addEventListener('click', () => {game.hidden = true; start.hidden = false; start.focus();});
+// Native dialogs retain keyboard focus and support Escape without a framework.
+const gameDialog = document.getElementById('game-dialog');
+document.querySelectorAll('[data-open-game]').forEach(button => button.addEventListener('click', () => gameDialog.showModal()));
+document.getElementById('open-guide').addEventListener('click', () => document.getElementById('guide-dialog').showModal());
+document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => document.getElementById(button.dataset.close).close()));
+document.querySelectorAll('dialog').forEach(dialog => dialog.addEventListener('click', event => { if(event.target === dialog) { const r=dialog.getBoundingClientRect(); if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom) dialog.close(); }}));
+document.getElementById('contact-form').addEventListener('submit', event => {
+  event.preventDefault(); const fields = new FormData(event.currentTarget);
+  const subject = `Portfolio enquiry from ${fields.get('name')}`;
+  const body = `Hello Ankit,\n\n${fields.get('message')}\n\n${fields.get('name')}\n${fields.get('email')}`;
+  window.location.href = `mailto:kallurayaankit@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+let ticking=false;
+window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(()=>{const range=document.documentElement.scrollHeight-innerHeight;document.getElementById('scroll-player').style.top=`${Math.min(95,Math.max(3,range>0?scrollY/range*92+3:3))}%`;ticking=false;});ticking=true;}},{passive:true});
